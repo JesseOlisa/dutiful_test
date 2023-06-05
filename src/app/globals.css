@@ -1,0 +1,59 @@
+@import url('https://fonts.cdnfonts.com/css/circular-std');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+	--background-color: #ffffff;
+}
+
+body {
+	/* color: rgb(var(--foreground-rgb)); */
+	background-color: var(--background-color);
+	font-family: 'Circular Std', sans-serif;
+	font-weight: 450;
+}
+
+/* h1 {
+	font-family: 'Recoleta' !important;
+} */
+
+@layer components {
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+
+	/* TYPOGRAPGY */
+	.title {
+		@apply font-recoleta text-2xl text-secondary md:text-4xl;
+	}
+	.subtitle {
+		@apply text-sm md:text-xl;
+	}
+
+	/* BUTTONS */
+	.btn-primary {
+		@apply rounded-md border-r-2 bg-[#532F82] px-10 py-4 font-medium text-white;
+	}
+	.btn-secondary {
+		@apply rounded-md border-2 border-[#603F8B] bg-white px-10 py-2 font-medium text-[#603F8B];
+	}
+	.role {
+		@apply flex items-center gap-4 rounded-xl border border-[#603F8B] px-4 py-5 transition;
+	}
+
+	/* GENERAL */
+	.circle-gradient {
+		@apply before:absolute before:-z-20 before:h-[95%] before:w-[80%] before:scale-90 before:rounded-full before:bg-gradient-circle before:opacity-80 before:content-[""] after:absolute after:-z-10 after:h-[95%] after:w-[80%] after:scale-[0.5] after:rounded-full after:bg-white after:content-[""];
+	}
+	.features-box {
+		@apply rounded-3xl border border-[#EEEEFF] bg-white p-5 shadow-box;
+	}
+	.circle {
+		@apply before:absolute before:right-1/4 before:top-1/4 before:h-[350px] before:w-[350px] before:scale-90 before:rounded-full before:border-2 before:border-[#EEEFFF] before:content-[""] after:absolute after:right-1/4 after:top-1/4 after:h-[350px] after:w-[350px] after:scale-[0.65] after:rounded-full after:border-2 after:border-[#EEEEFF] after:content-[""];
+	}
+}
